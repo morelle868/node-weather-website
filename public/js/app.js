@@ -1,8 +1,3 @@
-//const { response } = require("express")
-
-console.log("client java script file is loaded")
-
-
 const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
 const msg1 = document.querySelector('#message-1')
@@ -15,7 +10,7 @@ weatherForm.addEventListener('submit',(e)=>{
    msg1.textContent = 'Loading ...'
    msg2.textContent = ''
 
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
    response.json().then((data)=>{
             if(data.error){
                 msg1.textContent = data.error
